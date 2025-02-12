@@ -69,16 +69,18 @@ public class Main {
 
         System.out.println();
         System.out.println("Задание 7");
-        int friday = 0;
+        int friDay = 0;
         for (i = 0; i <= 31; i = i + 1) {
             if (i % 7 == 0 && i != 0) {
-                System.out.println("Сегодня пятница, " + i + "-е число ");
-                friday = i;
+                friDay = i;
+                System.out.println("Сегодня пятница, " + friDay + "-е число. Необходимо подготовить отчет ");
             }
         }
         System.out.println();
         System.out.println("Задание 8");
-        for (i = 0; i <= 2125; i = i + 1) {
+        int yearBefore = 2025;
+        int z = yearBefore - 200;
+        for (i = z; i <= yearBefore + 100; i = i + 1) {
             if (i % 79 == 0 && i >= 1825)
                 System.out.println(i);
         }
