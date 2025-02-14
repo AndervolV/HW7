@@ -1,22 +1,24 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание 1");
-        int salary = 0;
+        int target = 2_459_000;
+        int savings = 0;
+        int salary = 15000;
         int month = 1;
         do {
-            salary = salary + 15000;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + salary + " рублей");
+            savings = savings + salary;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + savings + " рублей");
             month++;
         }
-        while (salary <= 2_459_000);
+        while (savings <= target);
         System.out.println();
         System.out.println("Задание 2");
         int i = 1;
-        do {
+        while (i <= 10) {
             System.out.print(" " + i);
             i++;
         }
-        while (i <= 10);
+
         System.out.println();
         for (i = 10; i >= 1; i--) {
             System.out.print(" " + i);
@@ -24,55 +26,59 @@ public class Main {
         System.out.println();
         System.out.println("Задание 3");
         int population = 12_000_000;
-        int year = 1;
-        do {
-            population = population + population / 1000 * 9;
+        int year;
+        int birthRate = 17;
+        int mortality = 8;
+        int demography = population / 1000 * (birthRate - mortality);
+        for (year = 1; year <= 10; year++) {
+            population = population + demography;
             System.out.println("Год " + year + ", численность населения составляет " + population);
-            year++;
         }
-        while (year <= 10);
 
         System.out.println();
         System.out.println("Задание 4");
-        int deposit = 15000;
-        int montH = 1;
-        do {
-            deposit = deposit + deposit / 100 * 7;
-            System.out.println("Месяц " + montH + ", сумма накоплений составляет " + deposit);
-            montH++;
+        float deposit = 15000;
+        int targetDeposit = 12_000_000;
+        month = 1;
+        float income = 7;
+        while (deposit <= targetDeposit) {
+            deposit = deposit + deposit / 100 * income;
+            System.out.println("Месяц " + month + ", сумма накоплений составляет " + deposit);
+            month++;
         }
-        while (deposit <= 12_000_000);
+
         System.out.println();
         System.out.println("Задание 5");
-        int deposiT = 15000;
-        int monTH = 0;
-        do {
-            deposiT = deposiT + deposiT / 100 * 7;
-            monTH++;
-            if (monTH % 6 == 0) {
-                System.out.println("Месяц " + monTH + ", сумма накоплений составляет " + deposiT);
+        deposit = 15000;
+        month = 0;
+        while (deposit <= targetDeposit) {
+            deposit = deposit + deposit / 100 * income;
+            month++;
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + ", сумма накоплений составляет " + deposit);
             }
         }
-        while (deposiT <= 12_000_000);
+
         System.out.println();
         System.out.println("Задание 6");
-        int deposIT = 15000;
-        int moNTH = 0;
-        do {
-            deposIT = deposIT + deposIT / 100 * 7;
-            moNTH++;
-            if (moNTH % 6 == 0) {
-                System.out.println("Месяц " + moNTH + ", сумма накоплений составляет " + deposIT);
+        deposit = 15000;
+        int nineYears = 9 * 12;
+        month = 0;
+        while (month <= nineYears) {
+            deposit = deposit + deposit / 100 * income;
+            month++;
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + ", сумма накоплений составляет " + deposit);
             }
         }
-        while (moNTH <= 108);
 
         System.out.println();
         System.out.println("Задание 7");
         int friDay = 0;
-        for (i = 0; i <= 31; i = i + 1) {
-            if (i % 7 == 0 && i != 0) {
-                friDay = i;
+        int day;
+        for (day = 1; day <= 31; day = day + 1) {
+            if (day % 7 == 0 && day != 0) {
+                friDay = day - 2;
                 System.out.println("Сегодня пятница, " + friDay + "-е число. Необходимо подготовить отчет ");
             }
         }
@@ -80,9 +86,11 @@ public class Main {
         System.out.println("Задание 8");
         int yearBefore = 2025;
         int z = yearBefore - 200;
-        for (i = z; i <= yearBefore + 100; i = i + 1) {
-            if (i % 79 == 0 && i >= 1825)
-                System.out.println(i);
+        int s = yearBefore + 100;
+        int cycle = 79;
+        for (year = z; year <= s; year = year + 1) {
+            if (year % cycle == 0 && year >= 1825)
+                System.out.println(year);
         }
     }
 }
